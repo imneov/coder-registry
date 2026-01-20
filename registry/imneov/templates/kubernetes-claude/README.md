@@ -23,6 +23,7 @@ Deploy Kubernetes-based Coder workspaces with integrated Claude Code AI agent fo
 ### Authentication
 
 This template authenticates using:
+
 - Built-in ServiceAccount authentication when Coder runs inside the cluster (`use_kubeconfig = false`)
 - `~/.kube/config` when Coder runs outside the cluster (`use_kubeconfig = true`)
 
