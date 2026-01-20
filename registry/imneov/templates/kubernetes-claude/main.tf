@@ -175,6 +175,7 @@ module "claude-code" {
   folder              = "/home/coder/projects"
   install_claude_code = true
   claude_code_version = "latest"
+  subdomain           = false
   order               = 999
 
   experiment_report_tasks = true
@@ -194,10 +195,11 @@ module "dotfiles" {
 }
 
 module "code-server" {
-  count    = data.coder_workspace.me.start_count
-  source   = "registry.coder.com/modules/code-server/coder"
-  agent_id = coder_agent.main.id
-  folder   = "/home/coder/projects"
+  count     = data.coder_workspace.me.start_count
+  source    = "registry.coder.com/modules/code-server/coder"
+  agent_id  = coder_agent.main.id
+  folder    = "/home/coder/projects"
+  subdomain = false
 }
 
 module "git-config" {
